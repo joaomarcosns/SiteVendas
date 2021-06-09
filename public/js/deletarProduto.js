@@ -1,4 +1,4 @@
-function delProduto(id, name){
+function deletarProdutoduto(id, name){
     var respostas = confirm(`Deseja colocar o produto "${name}" como inativo?`);
 
     if(respostas){

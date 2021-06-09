@@ -1,4 +1,4 @@
-function delVenda(id){
+function deltarVenda(id){
     var resposta = confirm(`Deseja apagar a venda de id "${id}"?`);
 
     if(resposta){

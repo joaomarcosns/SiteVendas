@@ -42,7 +42,7 @@ $clientes = new ClientesController();
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="./editarCliente.php?id=<?= $cliente->getIdCliente() ?>" class="btn btn-success">editar</a>
-                                <button onclick="delCliente('<?= $cliente->getIdCliente() ?>', '<?= $cliente->getNome() ?>')" class="btn btn-danger">apagar</button>
+                                <button onclick="deletarCliente('<?= $cliente->getIdCliente() ?>', '<?= $cliente->getNome() ?>')" class="btn btn-danger">apagar</button>
                             </div>
                         </td>
                     </tr>
@@ -54,7 +54,7 @@ $clientes = new ClientesController();
 
 </body>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.25/datatables.min.js"></script>
-<script src="../../public/js/delCliente.js"></script>
+<script src="../../public/js/deletarCliente.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 <script>
     $('#table').DataTable({
