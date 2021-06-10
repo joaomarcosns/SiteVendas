@@ -60,11 +60,7 @@ $produto->setQuantidade($produto->findOne($idProduto)->getQuantidade());
             $produto->update($idProduto);
             header("Location: ./produtos.php");
         } catch (PDOException $err) {
-            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          Ocorreu um erro ao atualizar o Produto!
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <script>console.error(\'' . $err->getMessage() . '\')</script>';
+            echo 'Ocorreu um erro ao atualizar o Produto!';
         }
 
         ?>

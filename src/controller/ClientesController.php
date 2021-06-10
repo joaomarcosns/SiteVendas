@@ -14,7 +14,7 @@ class ClientesController extends Cliente
     public function findOne($idCliente)
     {
         
-        $query = "SELECT * FROM $this->tabela WHERE idCliente = :id AND ativo = true";
+        $query = "SELECT * FROM $this->tabela WHERE idCliente = :id";
         $stm = Database::prepare($query);
         $stm->bindParam(':id', $idCliente, PDO::PARAM_INT);
         $stm->execute();
@@ -31,7 +31,7 @@ class ClientesController extends Cliente
     public function findAll()
     {
         
-        $query = "SELECT * FROM $this->tabela WHERE ativo = true";
+        $query = "SELECT * FROM $this->tabela";
         $stm = Database::prepare($query);
         $stm->execute();
         $clientes = array();
@@ -45,7 +45,7 @@ class ClientesController extends Cliente
     public function delete($idCliente)
     {
 
-        $query = "UPDATE $this->tabela SET ativo = false WHERE idCliente = :id";
+        $query = "DELETE FROM $this->tabela WHERE idCliente = :id";
         $stm = Database::prepare($query);
         $stm->bindParam(':id', $idCliente, PDO::PARAM_INT);
         return $stm->execute();

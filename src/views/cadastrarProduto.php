@@ -1,3 +1,8 @@
+<?php
+    require '../controller/ProdutosController.php';
+    $produto = new ProdutosController();
+?>
+
 <!DOCTYPE html>
 <html lang="pt_br">
 
@@ -38,24 +43,15 @@
         <?php
 
             if(!$_POST) return;
-            require '../controller/ProdutosController.php';
-            $produto = new ProdutosController();
             $produto->setNome($_POST['nome-produto']);
             $produto->setPreco($_POST['preco']);
             $produto->setQuantidade($_POST['quantidade']);
 
             try {
                 $produto->insert($produto->getNome(), $produto->getPreco(), $produto->getQuantidade());
-                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                          Produto cadastrado com Sucesso!
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>';
+                echo 'Produto cadastrado com Sucesso!';
             } catch (PDOException $err) {
-                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          Ocorreu um erro ao cadastrar o Produto!
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <script>alert("'.$err->getMessage().'")</script>';
+                echo 'Ocorreu um erro ao cadastrar o Produto!';
             }
 
         ?>

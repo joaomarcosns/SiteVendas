@@ -14,7 +14,7 @@ class ProdutosController extends Produto
     public function findOne($idProduto)
     {
 
-        $query = "SELECT * FROM $this->tabela WHERE idProduto = :id AND ativo = true";
+        $query = "SELECT * FROM $this->tabela WHERE idProduto = :id";
         $stm = Database::prepare($query);
         $stm->bindParam(':id', $idProduto, PDO::PARAM_INT);
         $stm->execute();
@@ -33,7 +33,7 @@ class ProdutosController extends Produto
     public function findAll()
     {
         
-        $query = "SELECT * FROM $this->tabela WHERE ativo = true";
+        $query = "SELECT * FROM $this->tabela";
         $stm = Database::prepare($query);
         $stm->execute();
         $produtos = array();
@@ -48,7 +48,7 @@ class ProdutosController extends Produto
     public function delete($idProduto)
     {
         
-        $query = "UPDATE $this->tabela SET ativo = false WHERE idProduto = :id";
+        $query = "DELETE FROM $this->tabela WHERE idProduto = :id";
         $stm = Database::prepare($query);
         $stm->bindParam(':id', $idProduto, PDO::PARAM_INT);
         return $stm->execute();

@@ -1,16 +1,14 @@
 CREATE TABLE clientes(
 	idCliente INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(60),
-	cpf VARCHAR(15),
-	ativo BOOLEAN DEFAULT true
+	cpf VARCHAR(15)
 );
 
 CREATE TABLE produtos(
 	idProduto INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
 	valor DECIMAL(7,2),
-	quantidade INT,
-	ativo BOOLEAN DEFAULT true
+	quantidade INT
 );
 
 CREATE TABLE vendas(

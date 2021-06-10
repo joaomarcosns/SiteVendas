@@ -1,3 +1,8 @@
+<?php
+    require '../controller/ClientesController.php';
+    $cliente = new ClientesController();
+?>
+
 <!DOCTYPE html>
 <html lang="pt_br">
 
@@ -34,23 +39,14 @@
         <?php
 
             if(!$_POST) return;
-            require '../controller/ClientesController.php';
-            $cliente = new ClientesController();
             $cliente->setNome($_POST['nome-cliente']);
             $cliente->setCpf($_POST['cpf']);
 
             try {
                 $cliente->insert($cliente->getNome(), $cliente->getCpf());
-                echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                          Cliente cadastrado com Sucesso!
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>';
+                echo 'Cliente cadastrado com Sucesso!';
             } catch (PDOException $err) {
-                echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                          Ocorreu um erro ao cadastrar o cliente!
-                          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>
-                      <script>alert("'.$err->getMessage().'")</script>';
+                echo 'Ocorreu um erro ao cadastrar o cliente!';
             }
 
         ?>

@@ -45,7 +45,7 @@ $produtos = new ProdutosController();
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="editarProduto.php?id=<?= $produto->getId() ?>" class="btn btn-success">editar</a>
-                                <button onclick="deletarProdutoduto('<?= $produto->getId() ?>', '<?= $produto->getNome() ?>')" class="btn btn-danger">apagar</button>
+                                <a href="./apagarProduto.php?id=<?= $produto->getId() ?>" class="btn btn-danger">apagar</a>
                             </div>
                         </td>
                     </tr> <?php
@@ -57,8 +57,7 @@ $produtos = new ProdutosController();
 
 </body>
 <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/jq-3.3.1/dt-1.10.25/datatables.min.js"></script>
-<script src="../../public/js/deletarProdutoduto.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
         $('#table').DataTable({

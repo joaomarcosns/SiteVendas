@@ -29,9 +29,6 @@ try {
     header('Location: ./vendas.php');
 
 } catch (PDOException $err) {
-    echo '<script>
-            alert("'.$err->getMessage().'");
-            window.location.href = "./vendas.php";
-          </script>';
+    echo 'Erro';
 }
 

@@ -10,8 +10,5 @@ try {
     $produto->delete($produto->getId());
     header('Location: ./produtos.php');
 } catch (PDOException $err) {
-    echo '<script>
-            alert("' . $err->getMessage() . '");
-            window.location.href = "./produtos.php";
-          </script>';
+    echo 'Erro';
 }

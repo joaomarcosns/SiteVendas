@@ -10,8 +10,5 @@ try {
     $cliente->delete($cliente->getIdCliente());
     header('Location: ./clientes.php');
 } catch (PDOException $err) {
-    echo '<script>
-            alert("' . $err->getMessage() . '");
-            window.location.href = "./clientes.php";
-          </script>';
+    echo 'Erro';
 }
